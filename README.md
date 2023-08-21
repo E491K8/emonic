@@ -58,7 +58,7 @@ if __name__ == '__main__':
 
 ## Usage Guide
 
-Our team working hard and the usage guide will be avilable within 24hrs on http://zylo.vvfin.in or https://github.com/E491K8/ZyloProject/
+Our team working hard and the usage guide will be avilable within 24hrs on http://zylo.vvfin.in or https://github.com/embrake/zylo/
 
 ## Batteries Support 
 
