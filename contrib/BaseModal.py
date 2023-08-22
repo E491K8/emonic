@@ -1,4 +1,4 @@
-from ..core.branch import (Zylo, 
+from ..core.branch import (Emonic, 
 Response, 
 json,
 SharedDataMiddleware,
@@ -11,7 +11,7 @@ os,
 NotFound,
 HTTPException)
 
-app = Zylo(__name__)
+app = Emonic(__name__)
 
 def render(template_name, **kwargs):
     template = app.template_env.get_template(template_name)
