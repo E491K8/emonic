@@ -6,7 +6,7 @@ from werkzeug.middleware.profiler import ProfilerMiddleware
 import json
 from xml.etree import ElementTree as ET
 
-class ZyloRestful:
+class EmonicRestful:
     def __init__(self):
         self.url_map = Map()
         self.resources = {}
