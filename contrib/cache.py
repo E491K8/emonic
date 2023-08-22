@@ -3,7 +3,7 @@ import json
 import time
 from functools import wraps
 
-class ZyloCache:
+class EmonicCache:
     def __init__(self, cache_duration=300):
         self.cache = {}
         self.cache_duration = cache_duration
@@ -12,7 +12,7 @@ class ZyloCache:
         key = f"{func_name}#{args}#{kwargs}"
         return hashlib.sha256(key.encode()).hexdigest()
     
-    def get(self, timeout=None, key_prefix='zylo', unless=None):
+    def get(self, timeout=None, key_prefix='Emonic', unless=None):
         def decorator(func):
             @wraps(func)
             def wrapper(*args, **kwargs):
@@ -40,7 +40,7 @@ class ZyloCache:
         if key in self.cache:
             del self.cache[key]
     
-    def memoize(self, timeout=None, key_prefix='zylo'):
+    def memoize(self, timeout=None, key_prefix='Emonic'):
         def decorator(func):
             @wraps(func)
             def wrapper(*args, **kwargs):
@@ -63,7 +63,7 @@ class ZyloCache:
         key = self._generate_key(func_name, args, kwargs)
         self.cache[key] = (value, time.time())
     
-    def get_or_set(self, timeout=None, key_prefix='zylo'):
+    def get_or_set(self, timeout=None, key_prefix='Emonic'):
         def decorator(func):
             @wraps(func)
             def wrapper(*args, **kwargs):
