@@ -22,7 +22,7 @@ def generate_pepper():
 
 def hash_password(password):
     salt = generate_salt()
-    pepper = b'$zylo.chiper@'
+    pepper = b'$emonic.chiper@'
     combined = salt + password.encode() + pepper
 
     for _ in range(20):
@@ -33,11 +33,11 @@ def hash_password(password):
     for _ in range(iterations):
         combined = hashlib.sha3_512(combined).digest()
 
-    final_hash = '$zylo.chiper@' + salt.hex() + combined.hex()
+    final_hash = '$emonic.chiper@' + salt.hex() + combined.hex()
     return final_hash
 
 def verify_password(password, hashed_password):
-    prefix = '$zylo.chiper@'
+    prefix = '$emonic.chiper@'
     salt_hex = hashed_password[len(prefix): len(prefix) + 32]
     combined_hash = hashed_password[len(prefix) + 32:]
     combined = bytes.fromhex(salt_hex) + password.encode() + prefix.encode()
