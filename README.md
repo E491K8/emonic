@@ -127,7 +127,7 @@ MAILER = [
 
 ```
 
-## Documantaion v2.0.8
+## Documantaion v1.0.0
 
 - Visit http://emonic.vvfin.in/docs/v1/
 - For futher assistance get in touch with us support@vvfin.in
