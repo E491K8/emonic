@@ -19,7 +19,7 @@ import importlib
 from werkzeug.local import LocalStack, LocalProxy
 from datetime import datetime
 
-class Zylo:
+class Emonic:
     def __init__(self, import_name):
         self.template_folder = 'views'
         self.url_map = Map()
@@ -34,7 +34,7 @@ class Zylo:
         self.blueprints = []
         self.import_name = __name__
         self.config = {}
-        self.template_backend = 'zylo.backends.ZyloTemplates'
+        self.template_backend = 'emonic.backends.EmonicTemplates'
         self.template_folder = 'views'
         self.load_settings()
         self.app_ctx_stack = LocalStack()
@@ -50,7 +50,7 @@ class Zylo:
             settings_module = importlib.import_module('settings')
             templates_setting = getattr(settings_module, 'TEMPLATES', None)
             self.template_backend = templates_setting[0]['BACKEND'] if templates_setting else self.template_backend
-            assert self.template_backend == 'zylo.backends.ZyloTemplates', "This backend isn't supported by Zylo."
+            assert self.template_backend == 'emonic.backends.EmonicTemplates', "This backend isn't supported by Emonic."
             self.template_folder = templates_setting[0]['DIRS'][0] if templates_setting and templates_setting[0]['DIRS'] else self.template_folder
             self.host = getattr(settings_module, 'HOST', self.host)
             self.port = getattr(settings_module, 'PORT', self.port)
@@ -138,7 +138,15 @@ class Zylo:
                 return response
 
             # Handle the actual request
-            response = handler(request, **values)
+            handler_response = handler(request, **values)
+
+            # Automatically handle response format based on returned value
+            if isinstance(handler_response, str):
+                response = Response(handler_response, content_type='text/plain')
+            elif isinstance(handler_response, dict):
+                response = Response(json.dumps(handler_response), content_type='application/json')
+            else:
+                response = handler_response  # Assume the handler returned a Response object
 
             # Execute after_request functions
             response = self.postprocess_request(request, response)
