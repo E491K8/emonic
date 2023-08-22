@@ -1,6 +1,8 @@
-# Zylo
+# Emonic
 
-Zylo is a lightweight web framework made with love.
+Emonic is a lightweight web framework made with love.
+
+![Alt Text](Emonic.jpg)
 
 ## Features
 
@@ -11,11 +13,11 @@ Zylo is a lightweight web framework made with love.
 
 ## Installation
 
-You can install Zylo using pip:
+You can install Emonic using pip:
 
 
 ```bash
-pip install zylo
+pip install emonic
 
 ```
 
@@ -25,9 +27,9 @@ pip install zylo
 
 # app.py
 
-from zylo.core.branch import Zylo
+from emonic.core.branch import Emonic
 
-app = Zylo()
+app = Emonic()
 
 @app.route('/')
 def home(request):
@@ -40,69 +42,66 @@ if __name__ == '__main__':
 
 ## changelogs
 
-- Beta version 2.0.8
-- Latest update of beta
-- Bug fixes with update --> 2.0.8
-- Zylo Mailer got new features with update of 2.0.8
-- Zylo JwT Now support HS256 HS384 HS512 & RS256 RS384 RS512
-- Zylo Chiper introducing chip keys @latest 2.0.8
-- Zylo Introduce CORS For web security
-- Zylo Introduce Secure cookie builder @zinc cookies 
-- Zylo BaseModal Added new features for a vast support.
-- Zylo Instance now introducing @secure on Zylo web for more details check out the ## Zylo Instance.
-- Zylo Introduce ZyloRestful For API building easily.
-- changelogs 2.0.8 @latest
-- Running on beta current version @2.0.8
-- Relese date 21-8-2023 ( 23 Aug 2023 1:45:13:00:16 PM ( IST +5:30 ) )
-- Push the errors and bugs to @zylo github 
+- Latest version 1.0.0
+- Emonic Mailer of 1.0.0
+- Emonic JwT support HS256 HS384 HS512 & RS256 RS384 RS512
+- Emonic Chiper introducing chip keys @latest 1.0.0
+- Emonic CORS For web security
+- Emonic Secure cookie builder @zinc cookies 
+- Emonic BaseModal features for a vast support.
+- Emonic Instance support @secure on Emonic web for more details check out the ## Emonic Instance.
+- Emonic Introduce EmonicRestful For API building easily.
+- changelogs 1.0.0 @latest
+- Relese date 22-8-2023 ( 22 Aug 2023 1:45:13:00:16 PM ( IST +5:30 ) )
+- Push the errors and bugs to @emonic github 
 
 ## Usage Guide
 
-Our team working hard and the usage guide will be avilable within 24hrs on http://zylo.vvfin.in or https://github.com/embrake/zylo/
+Our team working hard and the usage guide will be avilable within 24hrs on http://emonic.vvfin.in or https://github.com/embrake/emonic/
 
 ## Batteries Support 
 
-Installation of ZyloAdmin v1
+Installation of EmonicAdmin v1
 
 ```bash
-pip install zyloadmin
+pip install emonic-admin
 
 ```
 
-## Create zylo project
+## Create emonic project
 
 ```bash
-zyloadmin startproject -i {projectName}
+emonic-admin startproject -i {projectName}
 ```
 
-## Zylo Instance @secure
+## Emonic Instance @secure
 
 ```python
 # app.py
 
-from zylo.core.branch import Zylo, Response
+from emonic.core.branch import Emonic
 
-app = Zylo(__name__)
+app = Emonic(__name__)
 
 @app.route('/', methods=['GET', 'POST'], secure=True, pin="your_secret_pin")
 def secureRoute(request):
-    return Response("You have accessed the secure route! ")
+    return "You have accessed the secure route! "
 
-### In this code we defined app as Zylo(__name__) instance then pass the secure = True and set the pin, by passing these deatils the Zylo will locked that particular route which you secure, if someone try to access the route the Zylo ask for a pin before accessing that route if pin is matched with your passed pin in that route the user will allow to get access of that route else it through a incorrect pin error until user pass the correct pin.
+### In this code we defined app as Emonic(__name__) instance then pass the secure = True and set the pin, by passing these deatils the Emonic will locked that particular route which you secure, if someone try to access the route the Emonic ask for a pin before accessing that route if pin is matched with your passed pin in that route the user will allow to get access of that route else it through a incorrect pin error until user pass the correct pin.
 
 ```
-## Zylo Instance @BaseFeatures
+## Emonic Instance @BaseFeatures
 
 ```python
 # app.py
 
-from zylo.core.branch import Zylo, Response
+from emonic.core.branch import Emonic
 
-app = Zylo(__name__)
+app = Emonic(__name__)
 
 @app.route('/', methods=['GET', 'POST'],  max_url_length=None, default=None, host=None, strict_slashes=None)
 def base(request):
-    return Response("Welcome")
+    return "Welcome"
 
 ```
 
@@ -111,7 +110,7 @@ def base(request):
 ```python 
 # mailer.py
 
-## Now you can setup the mailer through the Zylo-Admin batteries ($project) > settings.py file
+## Now you can setup the mailer through the Emonic-Admin batteries ($project) > settings.py file
 
 MAILER = [
     {
@@ -130,5 +129,5 @@ MAILER = [
 
 ## Documantaion v2.0.8
 
-- Visit http://zylo.vvfin.in/docs/v2/
+- Visit http://emonic.vvfin.in/docs/v2/
 - For futher assistance get in touch with us support@vvfin.in
