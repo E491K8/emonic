@@ -105,7 +105,7 @@ def base(request):
 
 ```
 
-## Mailer 2.0.8
+## Mailer 1.0.0
 
 ```python 
 # mailer.py
@@ -123,11 +123,11 @@ MAILER = [
     }
 ]
 
-## With using Mailer 2.0.8 you can now, use Bluk email sending and Send email Template with a timelimit and send a email with a paticular template.
+## With using Mailer 1.0.0 you can now, use Bluk email sending and Send email Template with a timelimit and send a email with a paticular template.
 
 ```
 
 ## Documantaion v2.0.8
 
-- Visit http://emonic.vvfin.in/docs/v2/
+- Visit http://emonic.vvfin.in/docs/v1/
 - For futher assistance get in touch with us support@vvfin.in
