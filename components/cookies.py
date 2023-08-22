@@ -1,7 +1,7 @@
 from http.cookies import SimpleCookie
-from ..core.branch import Zylo
+from ..core.branch import Emonic
 
-app = Zylo(__name__)
+app = Emonic(__name__)
 
 class CookieManager:
     def __init__(self):
